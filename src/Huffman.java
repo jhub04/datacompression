@@ -61,28 +61,4 @@ public class Huffman {
     }
     return encodedOutput.toString();
   }
-
-  public static void main(String[] args) {
-    List<Integer> lzwOutput = Arrays.asList(65, 66, 256, 258, 259, 65);
-
-    // Calculate frequency from lwzOutput
-    Map<Integer, Integer> frequencyMap = calculateFrequency(lzwOutput);
-
-    // Build huffmantree
-    HuffmanNode root = buildHuffmanTree(frequencyMap);
-
-    // Generate huffman codes
-    generateHuffmanCodes(root, "");
-
-    String encodedOutput = encode(lzwOutput, huffmanCodes);
-
-    System.out.println("Huffman Codes: " + huffmanCodes);
-    System.out.println("Encoded Output: " + encodedOutput);
-    /**
-    for (Map.Entry<Integer, Integer> set : frequencyMap.entrySet()) {
-      System.out.println(set.getKey() + ": " + set.getValue());
-    }
-     **/
-
-  }
 }
