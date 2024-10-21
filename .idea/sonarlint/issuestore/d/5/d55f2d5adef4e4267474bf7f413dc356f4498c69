@@ -1,3 +1,10 @@
 
-ƒ
-java:S2094"BRemove this empty class, write its code or make it an "interface".(“½‡¿üÿÿÿÿJ$24ccc8a4-e50d-48f3-8472-0511b5409168
+›
+java:S1104
+"XMake huffmanCodes a static final constant or non-public and provide accessors if needed.(¨Èª„8ÒìÅşª2J$c48016e5-7b52-46ac-99c0-898305e30489
+u
+java:S1444
+"2Make this "public static huffmanCodes" field final(¨Èª„8ÓìÅşª2J$25eb51a8-89f8-4e0c-a35e-39dafbd46848
+`
+java:S2386
+"Make this member "protected".(¨Èª„8âìÅşª2J$8910a95f-ae05-441b-8e85-c96a611512c6
