@@ -1,13 +1,19 @@
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class Huffman {
+class HuffmanNode {
+  int data;
+  char c;
+  HuffmanNode left;
+  HuffmanNode right;
+}
 
-  public static Map<Integer, String> huffmanCodes = new HashMap<>();
+class Huffman {
 
   public static Map<Integer, Integer> calculateFrequency(List<Integer> lwzOutput) {
     Map<Integer, Integer> frequencyMap = new HashMap<>();
@@ -19,20 +25,27 @@ public class Huffman {
   }
 
   public static HuffmanNode buildHuffmanTree(Map<Integer, Integer> frequencyMap) {
-    Queue<HuffmanNode> priorityQueue = new PriorityQueue<>(new HuffmanComparator());
+    Queue<HuffmanNode> priorityQueue = new PriorityQueue<>(Comparator.comparing(node -> node.data));
 
     // Create leaf node for each entry in the frequencyMap
     for (Map.Entry<Integer, Integer> set : frequencyMap.entrySet()) {
-      priorityQueue.add(new HuffmanNode(set.getKey(), set.getValue()));
+      HuffmanNode node = new HuffmanNode();
+      node.data = set.getValue();
+      node.c = (char) (int) set.getKey();
+      node.left = null;
+      node.right = null;
+      priorityQueue.add(node);
     }
 
     while (priorityQueue.size() > 1) {
-      HuffmanNode left = priorityQueue.poll();
-      HuffmanNode right = priorityQueue.poll();
+      HuffmanNode x = priorityQueue.poll();
+      HuffmanNode y = priorityQueue.poll();
 
-      HuffmanNode newNode = new HuffmanNode(-1, left.frequency + right.frequency);
-      newNode.left = left;
-      newNode.right = right;
+      HuffmanNode newNode = new HuffmanNode();
+      newNode.data = x.data + y.data;
+      newNode.c = '-';
+      newNode.left = x;
+      newNode.right = y;
 
       priorityQueue.add(newNode);
     }
@@ -40,18 +53,14 @@ public class Huffman {
     return priorityQueue.poll();
   }
 
-  public static void generateHuffmanCodes(HuffmanNode root, String code) {
-    if (root == null) return;
-
-    if (root.code != -1) {
-      huffmanCodes.put(root.code, code);
+  public static void generateHuffmanCodes(HuffmanNode root, String code, Map<Integer, String> huffmanCodes) {
+    if (root.left == null && root.right == null) {
+      huffmanCodes.put((int) root.c, code);
+      return;
     }
 
-    // Traverse left
-    generateHuffmanCodes(root.left, code + "0");
-    // Traverse right
-    generateHuffmanCodes(root.right, code + "1");
-
+    generateHuffmanCodes(root.left, code + "0", huffmanCodes);
+    generateHuffmanCodes(root.right, code + "1", huffmanCodes);
   }
 
   public static String encode(List<Integer> lzwOutput, Map<Integer, String> huffmanCodes) {
@@ -61,4 +70,17 @@ public class Huffman {
     }
     return encodedOutput.toString();
   }
+
+  public static String huffmanCompress(List<Integer> lzwOutput) {
+    Map<Integer, Integer> frequencyMap = calculateFrequency(lzwOutput);
+    HuffmanNode root = buildHuffmanTree(frequencyMap);
+
+    Map<Integer, String> huffmanCodes = new HashMap<>();
+    generateHuffmanCodes(root, "", huffmanCodes);
+    String encoded = encode(lzwOutput, huffmanCodes);
+
+    return encoded;
+  }
+
+
 }
