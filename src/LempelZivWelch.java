@@ -39,7 +39,7 @@ public class LempelZivWelch {
     return result;
   }
 
-  public void decompress(List<Integer> lzwCompressed) {
+  public void decompress(List<Integer> lzwCompressed, String outputPath) {
     Map<String, Integer> dictionary = getDictionaryStart();
     Map<Integer, String> reversedDictionary = reverseKeysAndValues(dictionary);
 
@@ -58,7 +58,7 @@ public class LempelZivWelch {
       characters = decompressedString;
     }
 
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter("file_decompressed.txt"))) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath))) {
       writer.write(decompressedData.toString());
     } catch (IOException e) {
       throw new RuntimeException(e);

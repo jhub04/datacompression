@@ -4,44 +4,36 @@ import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
-    LempelZivWelch compressor = new LempelZivWelch();
-    List<Integer> compressed = compressor.compress("div.lyx");
+    try {
+      // Compress file
+      String filename = "diverse";
+      String file_extension = ".lyx";
+      String inputFile = filename + file_extension;
+      String outputFile = filename + ".bin";
+      String decompressed_file = filename + "_decompressed" + file_extension;
 
-    compressor.decompress(compressed);
+      compressFile(inputFile, outputFile);
 
-    /**
-    try (FileOutputStream fos = new FileOutputStream("test_encoded.bin")) {
-      writeBitsToFile(huffmanCompressed, fos);
-      System.out.println("Huffman encoded data written to file: huffman_encoded.bin");
+      // Uncomment to test decompression
+      List<Integer> decompressedData = Huffman.decompress(outputFile);
+      // TODO: Convert decompressed LZW data back to original file
+      LempelZivWelch lzw = new LempelZivWelch();
+      lzw.decompress(decompressedData, decompressed_file);
+
     } catch (IOException e) {
+      System.err.println("Error processing file: " + e.getMessage());
       e.printStackTrace();
-    }*/
+    }
   }
 
+  private static void compressFile(String inputFile, String outputFile) throws IOException {
+    // Step 1: LZW Compression
+    LempelZivWelch lzw = new LempelZivWelch();
+    List<Integer> lzwCompressed = lzw.compress(inputFile);
+    System.out.println("LZW compression completed. Output size: " + lzwCompressed.size());
 
-  public static void writeBitsToFile(String bits, FileOutputStream fos) throws IOException {
-    int length = bits.length();
-    int byteIndex = 0;
-    byte currentByte = 0;
-
-    for (int i = 0; i < length; i++) {
-      currentByte  <<= 1;
-
-      if (bits.charAt(i) == '1') {
-        currentByte |= 1;
-      }
-
-      byteIndex++;
-      if (byteIndex == 8) {
-        fos.write(currentByte);
-        byteIndex = 0;
-        currentByte = 0;
-      }
-    }
-
-    if (byteIndex > 0) {
-      currentByte <<= (8 - byteIndex);
-      fos.write(currentByte);
-    }
+    // Step 2: Huffman Compression
+    Huffman.compress(lzwCompressed, outputFile);
+    System.out.println("Huffman compression completed. File written to: " + outputFile);
   }
 }
