@@ -1,4 +1,5 @@
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,12 +12,14 @@ public class LempelZivWelch {
     Map<String, Integer> dictionary = getDictionaryStart();
     List<Integer> result = new ArrayList<>();
 
-    try (FileInputStream input = new FileInputStream(fileName)) {
+    try (FileInputStream input = new FileInputStream(fileName);
+         InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
+
 
       String foundChars = "";
 
       int currentByte;
-      while ((currentByte = input.read()) != -1) {
+      while ((currentByte = reader.read()) != -1) {
         char currentChar = (char) currentByte;
         String charsToAdd = foundChars + currentChar;
 

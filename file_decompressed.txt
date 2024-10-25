@@ -112,7 +112,7 @@ logicalmkup
 \begin_body
 
 \begin_layout Chapter
-Ãving 6 algoritmer og datastrukturer
+Øving 6 algoritmer og datastrukturer
 \end_layout
 
 \begin_layout Standard
@@ -136,8 +136,8 @@ Lag et program som kan lese en fil og lage en komprimert utgave.
 
 \begin_layout Standard
 For maksimal kompresjon,
- er det lurt Ã¥ bruke flere teknikker.
- Bruk gjerne bÃ¥de 
+ er det lurt å bruke flere teknikker.
+ Bruk gjerne både 
 \series bold
 Lempel-Ziv
 \series default
@@ -145,29 +145,29 @@ Lempel-Ziv
 \series bold
 Huffmankoding
 \series default
- for Ã¥ komprimere.
- LZ gjÃ¸r om fila til en blanding av bakoverreferanser og ukomprimerte strenger.
+ for å komprimere.
+ LZ gjør om fila til en blanding av bakoverreferanser og ukomprimerte strenger.
  Innholdet i de ukomprimerte strengene komprimeres videre med Huffmannkoding.
 \end_layout
 
 \begin_layout Standard
 Det kan bli en del arbeid.
- HÃ¥ndtering av bits & bytes er nytt for mange.
+ Håndtering av bits & bytes er nytt for mange.
  Jobb gjerne i grupper,
  og fordel arbeidet.
  
 \emph on
-Les hele oppgaveteksten fÃ¸r dere begynner,
- unngÃ¥ misforstÃ¥elser!
+Les hele oppgaveteksten før dere begynner,
+ unngå misforståelser!
 \end_layout
 
 \begin_layout Standard
-Det er anledning til Ã¥ jobbe i gruppe her,
- selv om man har jobbet alene pÃ¥ mindre Ã¸vinger.
+Det er anledning til å jobbe i gruppe her,
+ selv om man har jobbet alene på mindre øvinger.
 \end_layout
 
 \begin_layout Standard
-Jeg kommer til Ã¥ lage en highscore-liste sortert pÃ¥ best kompresjon av 
+Jeg kommer til å lage en highscore-liste sortert på best kompresjon av 
 \begin_inset Quotes cld
 \end_inset
 
@@ -176,14 +176,14 @@ diverse.lyx
 \end_inset
 
 .
- For Ã¥ komme pÃ¥ lista,
- mÃ¥ utpakkingen fungere feilfritt,
- og oppgaven vÃ¦re levert innen fristen.
- Den halvparten som ligger Ã¸verst pÃ¥ lista nÃ¥r fristen er ute,
- fÃ¥r et ekstra poeng pÃ¥ oppgaven.
- SÃ¥ her har dere et valg:
- Dere kan gjÃ¸re dette til en liten enkel oppgave med de vanlige to poengene,
- eller legge mer arbeid i det med hÃ¥p om Ã¥ fÃ¥ med ekstrapoenget ogsÃ¥.
+ For å komme på lista,
+ må utpakkingen fungere feilfritt,
+ og oppgaven være levert innen fristen.
+ Den halvparten som ligger øverst på lista når fristen er ute,
+ får et ekstra poeng på oppgaven.
+ Så her har dere et valg:
+ Dere kan gjøre dette til en liten enkel oppgave med de vanlige to poengene,
+ eller legge mer arbeid i det med håp om å få med ekstrapoenget også.
 \end_layout
 
 \begin_layout Subsection
@@ -303,62 +303,62 @@ https://www.idi.ntnu.no/emner/idatt2101/kompr/enwik8
 
 \begin_layout Standard
 enwik8 er en diger fil,
- de fÃ¸rste 100MB av engelsk wikipedia.
- Dere trenger ikke hÃ¥ndtere den for Ã¥ fÃ¥ full uttelling,
+ de første 100MB av engelsk wikipedia.
+ Dere trenger ikke håndtere den for å få full uttelling,
  men har dere et 
 \emph on
 kjapt
 \emph default
  program,
- er det jo artig Ã¥ prÃ¸ve.
- Denne fila brukes i rekordforsÃ¸k,
- der de beste har klart Ã¥ presse den sammen til ca.
+ er det jo artig å prøve.
+ Denne fila brukes i rekordforsøk,
+ der de beste har klart å presse den sammen til ca.
  15MB.
  Det er pengepremier (Hutter-prisen) for de som setter nye rekorder.
 \end_layout
 
 \begin_layout Section
-Krav til lÃ¸sningen
+Krav til løsningen
 \end_layout
 
 \begin_layout Enumerate
 Send inn programmer for komprimering og dekomprimering,
- som klarer Ã¥ komprimere og pakke ut igjen minst to av testfilene.
+ som klarer å komprimere og pakke ut igjen minst to av testfilene.
  
 \end_layout
 
 \begin_layout Enumerate
-Bruk en eller flere av algoritmene vi har sett pÃ¥.
- Ã kombinere flere,
+Bruk en eller flere av algoritmene vi har sett på.
+ Å kombinere flere,
  gir ofte bedre resultat.
- Dette kan gjÃ¸res med Ã¥ lage flere uavhengige programmer,
+ Dette kan gjøres med å lage flere uavhengige programmer,
  eller ett program som implementerer flere teknikker.
 \end_layout
 
 \begin_layout Enumerate
-Den komprimerte fila mÃ¥ vÃ¦re 
+Den komprimerte fila må være 
 \emph on
 mindre enn originalen.
  
 \emph default
-Dette mÃ¥les ved Ã¥ se pÃ¥ 
+Dette måles ved å se på 
 \emph on
-filstÃ¸rrelser
+filstørrelser
 \emph default
 .
  
 \end_layout
 
 \begin_layout Enumerate
-Dekomprimeringsprogrammet mÃ¥ greie Ã¥ gjenskape originalfila,
- nÃ¥r det bare har den komprimerte fila Ã¥ pakke ut.
+Dekomprimeringsprogrammet må greie å gjenskape originalfila,
+ når det bare har den komprimerte fila å pakke ut.
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
 Ingen ekstra filer,
- alt som trengs mÃ¥ finnes i den komprimerte fila.
- Dekompresjon mÃ¥ altsÃ¥ virke uten Ã¥ ha originalen tilgjengelig.
+ alt som trengs må finnes i den komprimerte fila.
+ Dekompresjon må altså virke uten å ha originalen tilgjengelig.
  
 \end_layout
 
@@ -382,14 +382,14 @@ diff
 \begin_inset Quotes crd
 \end_inset
 
- pÃ¥ linux/mac.
- UnngÃ¥ overraskelser,
- test selv fÃ¸r dere leverer.
+ på linux/mac.
+ Unngå overraskelser,
+ test selv før dere leverer.
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Dere mÃ¥ lage programmene selv,
+Dere må lage programmene selv,
  ikke noe 
 \begin_inset Quotes cld
 \end_inset
@@ -399,8 +399,8 @@ cut & paste
 \end_inset
 
  fra nettet.
- Det er mye Ã¥ lÃ¦re av Ã¥ gjÃ¸re en slik oppgave,
- som en ikke fÃ¥r med seg med 
+ Det er mye å lære av å gjøre en slik oppgave,
+ som en ikke får med seg med 
 \begin_inset Quotes cld
 \end_inset
 
@@ -409,7 +409,7 @@ cut & paste
 \end_inset
 
 .
- BÃ¥de nÃ¥r det gjelder algoritmene,
+ Både når det gjelder algoritmene,
  og generell programmering.
  
 \end_layout
@@ -419,12 +419,12 @@ Komprimering og utpakking
 \emph on
 skal 
 \emph default
-skje i separate kjÃ¸ringer.
+skje i separate kjøringer.
  Det er
 \emph on
  ikke 
 \emph default
-greit Ã¥ ha ett samleprogram som bÃ¥de gjÃ¸r innpakking og utpakking i 
+greit å ha ett samleprogram som både gjør innpakking og utpakking i 
 \emph on
 en
 \emph default
@@ -439,7 +439,7 @@ trenge den komprimerte fila,
 \emph on
 ikke 
 \emph default
-skjer i samme kjÃ¸ring.
+skjer i samme kjøring.
 \end_layout
 
 \begin_deeper
@@ -448,27 +448,27 @@ Dere
 \emph on
 kan 
 \emph default
-ha ett stort program som gjÃ¸r hele jobben,
- men det mÃ¥ i sÃ¥ fall vÃ¦re i to 
+ha ett stort program som gjør hele jobben,
+ men det må i så fall være i to 
 \emph on
 separate
 \emph default
- kjÃ¸ringer.
- Et slikt program mÃ¥ altsÃ¥ stoppe etter komprimering,
- og kjÃ¸res igang med andre parametre for Ã¥ pakke ut.
+ kjøringer.
+ Et slikt program må altså stoppe etter komprimering,
+ og kjøres igang med andre parametre for å pakke ut.
  Eller dere kan ha separate programmer.
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Programmene mÃ¥ lese og skrive 
+Programmene må lese og skrive 
 \emph on
 filer
 \emph default
 .
- AltsÃ¥ ikke bare testdata i en tabell.
- Filene ligger i den mappa programmet kjÃ¸rer i.
- Jeg mÃ¥ kunne teste pÃ¥ forskjellige filer.
+ Altså ikke bare testdata i en tabell.
+ Filene ligger i den mappa programmet kjører i.
+ Jeg må kunne teste på forskjellige filer.
 \end_layout
 
 \begin_layout Subsection
@@ -476,10 +476,10 @@ Tips for best kompresjon
 \end_layout
 
 \begin_layout Standard
-Det enkleste er Ã¥ gjÃ¸re Huffman- og LZ-delene helt separat.
- Man kan fordele arbeidet pÃ¥ gruppa pÃ¥ denne mÃ¥ten,
+Det enkleste er å gjøre Huffman- og LZ-delene helt separat.
+ Man kan fordele arbeidet på gruppa på denne måten,
  og sette sammen til slutt.
- Debuggingen blir ogsÃ¥ enklere.
+ Debuggingen blir også enklere.
  Men det er ikke dette som gir aller best kompresjon.
 \end_layout
 
@@ -488,23 +488,23 @@ Lempel-Ziv lager koder for repeterte strenger,
  samt tekststrenger som ikke lot seg komprimere.
  Strengene som ikke lot seg komprimere med LZ,
  kan Huffman-delen ta seg av.
- Huffman-kompresjon fungerer vanligvis ikke sÃ¥ godt pÃ¥ kodene for repeterte strenger,
- sÃ¥ et smart Huffman-program kan skrive disse delene som de er,
- uten Ã¥ forsÃ¸ke Ã¥ komprimere dem.
+ Huffman-kompresjon fungerer vanligvis ikke så godt på kodene for repeterte strenger,
+ så et smart Huffman-program kan skrive disse delene som de er,
+ uten å forsøke å komprimere dem.
  Et slikt opplegg blir som regel bedre,
- men er noe mer arbeid Ã¥ kode.
+ men er noe mer arbeid å kode.
 \end_layout
 
 \begin_layout Standard
-NÃ¥r LZ ser etter repeterte strenger,
+Når LZ ser etter repeterte strenger,
  vil kompresjon avhenge av hvor langt bakover LZ leter,
- og hvor kompakte referanser dere klarer Ã¥ lage.
+ og hvor kompakte referanser dere klarer å lage.
  Her er det rom for eksperimentering!
 \end_layout
 
 \begin_layout Standard
 Run-length coding er enkelt,
- men oppnÃ¥r ikke mye pÃ¥ testfilene.
+ men oppnår ikke mye på testfilene.
 \end_layout
 
 \begin_layout Subsection
@@ -512,37 +512,37 @@ Tips om hele oppgaven
 \end_layout
 
 \begin_layout Standard
-Det er lett Ã¥ gjÃ¸re feil,
- og vanskelig Ã¥ debugge.
- NÃ¥r noe gÃ¥r galt,
- bruk testfiler som er sÃ¥ smÃ¥ at dere kan fÃ¸lge med pÃ¥ alt som skjer hele veien.
+Det er lett å gjøre feil,
+ og vanskelig å debugge.
+ Når noe går galt,
+ bruk testfiler som er så små at dere kan følge med på alt som skjer hele veien.
  F.eks.
- en testfil med bare 3â20 byte.
- Da blir det lettere Ã¥ se nÃ¥r noe gÃ¥r galt.
- En mÃ¥te er Ã¥ bruke en debugger som kan vise innholdet i variabler.
- En annen mÃ¥te er Ã¥ legge inn debug-utskrifter for Ã¥ se hva som skjer.
+ en testfil med bare 3–20 byte.
+ Da blir det lettere å se når noe går galt.
+ En måte er å bruke en debugger som kan vise innholdet i variabler.
+ En annen måte er å legge inn debug-utskrifter for å se hva som skjer.
 \end_layout
 
 \begin_layout Standard
 Om dere bruker flere teknikker,
  som LZ+Huffmann,
- er der lurt Ã¥ teste og lage LZ-delen og Huffmann-delen hver for seg.
- Programmer som zip gjÃ¸r alt i memory for Ã¥ vÃ¦re raske.
- Men det er ikke noe galt i Ã¥ ha ett program som gjÃ¸r LZ-komprimeringen og skriver sitt resultat til fil,
+ er der lurt å teste og lage LZ-delen og Huffmann-delen hver for seg.
+ Programmer som zip gjør alt i memory for å være raske.
+ Men det er ikke noe galt i å ha ett program som gjør LZ-komprimeringen og skriver sitt resultat til fil,
  og deretter et Huffmann-program som leser denne fila og skriver en ny og mer komprimert fil.
- Dekomprimering kan hÃ¥ndteres tilsvarende.
+ Dekomprimering kan håndteres tilsvarende.
  Da kan hvert trinn testes og debugges for seg.
- Dette gjÃ¸r det ogsÃ¥ lettere Ã¥ dele pÃ¥ arbeidet i gruppa.
+ Dette gjør det også lettere å dele på arbeidet i gruppa.
  
 \end_layout
 
 \begin_layout Subsubsection
-Egne idÃ©er
+Egne idéer
 \end_layout
 
 \begin_layout Standard
-Har dere egne idÃ©er om datakompresjon?
- PrÃ¸v det gjerne ut i oppgaven!
+Har dere egne idéer om datakompresjon?
+ Prøv det gjerne ut i oppgaven!
 \end_layout
 
 \begin_layout Subsubsection*
@@ -550,7 +550,7 @@ Bytes eller tekststrenger?
 \end_layout
 
 \begin_layout Standard
-Jeg anbefaler Ã¥ se pÃ¥ fila som 
+Jeg anbefaler å se på fila som 
 \begin_inset Quotes cld
 \end_inset
 
@@ -559,13 +559,13 @@ et array med bytes
 \end_inset
 
 ,
- og lage et program som hÃ¥ndterer dette.
+ og lage et program som håndterer dette.
  Fordeler:
 \end_layout
 
 \begin_layout Itemize
 Bytes fungerer for alt.
- Dere kan komprimere filer som ikke er tekst ogsÃ¥,
+ Dere kan komprimere filer som ikke er tekst også,
  som f.eks.
  .exe
 \end_layout
@@ -575,7 +575,7 @@ Ingen problemer med
 \begin_inset Quotes cld
 \end_inset
 
-Ã¦Ã¸Ã¥
+æøå
 \begin_inset Quotes crd
 \end_inset
 
@@ -583,39 +583,39 @@ Ingen problemer med
 \end_layout
 
 \begin_layout Standard
-Mange liker likevel Ã¥ jobbe med tekststrenger.
+Mange liker likevel å jobbe med tekststrenger.
  Det har noen fordeler:
 \end_layout
 
 \begin_layout Itemize
 Kan bruke velkjente strengoperasjoner.
- (Men de fÃ¥ man trenger her,
- er ikke sÃ¥ vanskelige Ã¥ re-implementere for byte-arrayâ¦)
+ (Men de få man trenger her,
+ er ikke så vanskelige å re-implementere for byte-array…)
 \end_layout
 
 \begin_layout Itemize
-For debugging er det lett Ã¥ skrive ut tekst pÃ¥ skjermen
+For debugging er det lett å skrive ut tekst på skjermen
 \end_layout
 
 \begin_layout Standard
-Men det er mange ulemper ogsÃ¥.
- En ting er at programmet begrenses til Ã¥ bare jobbe med tekst.
- Mange fÃ¥r problemer med 
+Men det er mange ulemper også.
+ En ting er at programmet begrenses til å bare jobbe med tekst.
+ Mange får problemer med 
 \begin_inset Quotes cld
 \end_inset
 
-Ã¦Ã¸Ã¥
+æøå
 \begin_inset Quotes crd
 \end_inset
 
 ,
  og med alle de andre unicodetegnene jeg bruker.
- For Ã¥ skrive norsk,
+ For å skrive norsk,
  brukes ihvertfall 
 \begin_inset Quotes cld
 \end_inset
 
-Ã¦Ã¸Ã¥Ã©Ã´
+æøåéô
 \begin_inset Quotes crd
 \end_inset
 
@@ -624,14 +624,14 @@ Men det er mange ulemper ogsÃ¥.
 \begin_inset Quotes cld
 \end_inset
 
-â¢âÎ©\SpecialChar ldots
+•–Ω\SpecialChar ldots
 
 \begin_inset Quotes crd
 \end_inset
 
- og anfÃ¸rselstegn.
+ og anførselstegn.
  De som jobber linjeorientert,
- fÃ¥r gjerne linjeskift som et vanskelig spesialtilfelle.
+ får gjerne linjeskift som et vanskelig spesialtilfelle.
  Bytes har ikke slike problemer.
 \end_layout
 
@@ -644,24 +644,24 @@ Filer
 \end_layout
 
 \begin_layout Standard
-Normalt blir det veldig lite kompresjon pÃ¥ smÃ¥ filer.
- BittesmÃ¥ filer kan brukes for Ã¥ debugge programmet,
- men for Ã¥ teste kompresjon bÃ¸r filene vÃ¦re noen titalls kilobyte.
+Normalt blir det veldig lite kompresjon på små filer.
+ Bittesmå filer kan brukes for å debugge programmet,
+ men for å teste kompresjon bør filene være noen titalls kilobyte.
 \end_layout
 
 \begin_layout Standard
-Det blir noen avgjÃ¸relser Ã¥ ta,
+Det blir noen avgjørelser å ta,
  som f.eks.
  hvor langt bakover programmet deres skal lete etter repeterte sekvenser.
  Zip leter 32kB bakover,
- det fins ogsÃ¥ versjoner som gÃ¥r 64kB tilbake.
- Hvis dere lar programmet gÃ¥ lenger tilbake,
- vil det bli tregere men sannsynligvis komprimere bedre ogsÃ¥.
+ det fins også versjoner som går 64kB tilbake.
+ Hvis dere lar programmet gå lenger tilbake,
+ vil det bli tregere men sannsynligvis komprimere bedre også.
 \end_layout
 
 \begin_layout Standard
 Om en vil ha et veldig kjapt program,
- kan det lÃ¸nne seg Ã¥ la seg inspirere av avanserte tekstsÃ¸kalgoritmer.
+ kan det lønne seg å la seg inspirere av avanserte tekstsøkalgoritmer.
  
 \end_layout
 
@@ -671,12 +671,12 @@ Filformat
 
 \begin_layout Standard
 Filformat bestemmer dere selv.
- Det kan fort bli en avveiing mellom hvor komplisert programmet skal vÃ¦re,
+ Det kan fort bli en avveiing mellom hvor komplisert programmet skal være,
  og hvor godt det skal komprimere.
 \end_layout
 
 \begin_layout Standard
-Den komprimerte fila kan bestÃ¥ av blokker.
+Den komprimerte fila kan bestå av blokker.
  Hver blokk starter med en byte-verdi,
  som er et tall mellom -128 og +127.
  Hvis tallet er negativt,
@@ -690,68 +690,68 @@ Den komprimerte fila kan bestÃ¥ av blokker.
 
 \begin_layout Standard
 Hvis tallet er positivt,
- angir det lengden pÃ¥ en repetert sekvens.
+ angir det lengden på en repetert sekvens.
  De neste 1,
- 2 eller 4 byte er et heltall som forteller hvor langt bakover i fila denne sekvensen er Ã¥ finne.
+ 2 eller 4 byte er et heltall som forteller hvor langt bakover i fila denne sekvensen er å finne.
  Med 1
 \begin_inset space \thinspace{}
 \end_inset
 
-byte (byte) er det bare mulig Ã¥ gÃ¥ 127 tegn bakover.
+byte (byte) er det bare mulig å gå 127 tegn bakover.
  Programmet blir raskt,
- men komprimerer ikke sÃ¥ kraftig.
+ men komprimerer ikke så kraftig.
  Med 2
 \begin_inset space \thinspace{}
 \end_inset
 
-byte (short) gÃ¥r det an Ã¥ gÃ¥ opp til 32
+byte (short) går det an å gå opp til 32
 \begin_inset space \thinspace{}
 \end_inset
 
 kB bakover,
- men vi bruker altsÃ¥ opp en ekstra byte.
+ men vi bruker altså opp en ekstra byte.
  Med 4
 \begin_inset space \thinspace{}
 \end_inset
 
-byte (int) kan vi gÃ¥ opp til 2
+byte (int) kan vi gå opp til 2
 \begin_inset space \thinspace{}
 \end_inset
 
 GB bakover.
- Det gir mange flere muligheter for Ã¥ finne repeterte strenger,
- men bruker ogsÃ¥ mer plass.
+ Det gir mange flere muligheter for å finne repeterte strenger,
+ men bruker også mer plass.
  Et program som leter opptil 2
 \begin_inset space \thinspace{}
 \end_inset
 
 GB bakover,
- blir sannsynligvis temmelig tregt ogsÃ¥.
- Det kan lÃ¸nne seg Ã¥ begrense litt\SpecialChar ldots
+ blir sannsynligvis temmelig tregt også.
+ Det kan lønne seg å begrense litt\SpecialChar ldots
 
 \end_layout
 
 \begin_layout Subsection
-Litt om Ã¥ kombinere LZ og Huffmann
+Litt om å kombinere LZ og Huffmann
 \end_layout
 
 \begin_layout Standard
-Det enkleste er Ã¥ gjÃ¸re de to delene separat.
- I sÃ¥ fall komprimerer man med LZ fÃ¸rst,
+Det enkleste er å gjøre de to delene separat.
+ I så fall komprimerer man med LZ først,
  og deretter med Huffmann.
- PrÃ¸v gjerne omvendt,
- men ikke regn med god kompresjon pÃ¥ det viset.
+ Prøv gjerne omvendt,
+ men ikke regn med god kompresjon på det viset.
 \end_layout
 
 \begin_layout Standard
-Man kan fÃ¥ bedre kompresjon ved Ã¥ se pÃ¥ hva slags data LZ lager.
+Man kan få bedre kompresjon ved å se på hva slags data LZ lager.
  Referanser bakover er et antall byte som blir temmelig tilfeldig.
  Tilfeldige data komprimeres ikke bra med Huffmann,
- sÃ¥ det er bedre Ã¥ holde slikt utenfor slik at Huffmann bare komprimerer data og ikke disse referansene.
+ så det er bedre å holde slikt utenfor slik at Huffmann bare komprimerer data og ikke disse referansene.
  Antall byte som refereres har derimot en kjent fordeling;
  det er mange fler referanser til korte data (ord o.l.) enn lange strenger.
- SÃ¥ Huffmannkomprimering kan brukes pÃ¥ strenglengder.
- Beste mÃ¥te er i sÃ¥ fall Ã¥ ha ett huffmantre for data,
+ Så Huffmannkomprimering kan brukes på strenglengder.
+ Beste måte er i så fall å ha ett huffmantre for data,
  og et annet tre for strenglengder.
  Da kan begge deler kodes med ganske korte koder.
  
@@ -763,15 +763,15 @@ Litt om Lempel-Ziv-Welsh
 
 \begin_layout Standard
 LZW bygger opp en ordbok/dictionary,
- og sparer plass ved Ã¥ angi ordnumre i stedet for Ã¥ lagre ordene i output.
- Til Ã¥ begynne med inneholder ordboka de 256 mulige enkeltbytes,
+ og sparer plass ved å angi ordnumre i stedet for å lagre ordene i output.
+ Til å begynne med inneholder ordboka de 256 mulige enkeltbytes,
  som har numre fra 0 til 255.
- Kompresjon oppnÃ¥s ved Ã¥ legge til ord (eller bokstavkombinasjoner) som forekommer ofte.
- Ulike mÃ¥ter for Ã¥ legge til ord eller kortere sekvenser,
+ Kompresjon oppnås ved å legge til ord (eller bokstavkombinasjoner) som forekommer ofte.
+ Ulike måter for å legge til ord eller kortere sekvenser,
  gir ulik kompresjon.
  Man kan legge inn hver eneste sekvens som dukker opp:
- man fÃ¥r raskt noe Ã¥ komprimere,
- men fÃ¥r fort sÃ¥ mange 
+ man får raskt noe å komprimere,
+ men får fort så mange 
 \begin_inset Quotes cld
 \end_inset
 
@@ -779,28 +779,28 @@ ord
 \begin_inset Quotes crd
 \end_inset
 
- at det trengs mange bits for Ã¥ referere til dem.
- En annen mÃ¥te er Ã¥ legge inn nye ord bare nÃ¥r de forekommer for andre eller tredje gang.
- FÃ¦rre ord i ordboka,
- men de man fÃ¥r,
+ at det trengs mange bits for å referere til dem.
+ En annen måte er å legge inn nye ord bare når de forekommer for andre eller tredje gang.
+ Færre ord i ordboka,
+ men de man får,
  forekommer oftere.
  Det kan gi bedre kompresjon.
 \end_layout
 
 \begin_layout Standard
 Man lagrer aldri ordboka.
- Hele poenget med LZW er at utpakkingsdelen kan bygge opp ordboka pÃ¥ samme mÃ¥te som innpakkingsdelen gjorde,
- ved Ã¥ se pÃ¥ hva som har blitt pakket ut sÃ¥ langt.
+ Hele poenget med LZW er at utpakkingsdelen kan bygge opp ordboka på samme måte som innpakkingsdelen gjorde,
+ ved å se på hva som har blitt pakket ut så langt.
  Plass spares ved at numrene som regel er kortere enn ord/tegnsekvenser de refererer til.
 \end_layout
 
 \begin_layout Standard
-Det er mange mÃ¥ter Ã¥ dele opp i ord.
+Det er mange måter å dele opp i ord.
  Man kan dele opp i faktiske ord,
- og slik fÃ¥ nytte av at forfatteren har et begrensa ordforrÃ¥d som gir fÃ¥ ulike numre.
- Eller man kan se pÃ¥ mindre biter,
- og fÃ¥ nytte av at mange ord inneholder de samme stavelsene.
- Ikke glem Ã¥ fÃ¥ med mellomrommene ogsÃ¥â¦
+ og slik få nytte av at forfatteren har et begrensa ordforråd som gir få ulike numre.
+ Eller man kan se på mindre biter,
+ og få nytte av at mange ord inneholder de samme stavelsene.
+ Ikke glem å få med mellomrommene også…
 \end_layout
 
 \begin_layout Subsection
@@ -808,13 +808,13 @@ Kombinere LZW og Huffmann
 \end_layout
 
 \begin_layout Standard
-LZW lager en output som bestÃ¥r av numre.
+LZW lager en output som består av numre.
  I begynnelsen numre for diverse bytes,
- etterhvert ogsÃ¥ numre for ord som LZW har oppdaget.
+ etterhvert også numre for ord som LZW har oppdaget.
  Man kan telle opp hvor mange det er av hvert nummer,
  og lage et Huffmantre.
  De ord/bytes som forekommer ofte,
- fÃ¥r da korte Huffmannkoder og vi sparer mer plass.
+ får da korte Huffmannkoder og vi sparer mer plass.
 \end_layout
 
 \begin_layout Section
@@ -824,20 +824,20 @@ Om Huffmankoding
 \begin_layout Standard
 Lag et program som leser inn en fil,
  teller frekvenser og genererer en huffmanntre ut fra byte-verdiene i filen.
- Deretter bruker programmet huffmanntreet til Ã¥ skrive en komprimert huffmannkodet fil.
+ Deretter bruker programmet huffmanntreet til å skrive en komprimert huffmannkodet fil.
  
 \end_layout
 
 \begin_layout Standard
-For Ã¥ pakke ut,
- trenger utpakkingsprogrammet nok informasjon til Ã¥ gjenskape huffmantreet.
- Det enkleste er Ã¥ legge frekvenstabellen fÃ¸rst i den komprimerte fila.
+For å pakke ut,
+ trenger utpakkingsprogrammet nok informasjon til å gjenskape huffmantreet.
+ Det enkleste er å legge frekvenstabellen først i den komprimerte fila.
  
 \end_layout
 
 \begin_layout Standard
-Adaptiv huffmankoding er en mer avansert lÃ¸sning.
- For Ã¥ slippe overhead med en lagret tabell,
+Adaptiv huffmankoding er en mer avansert løsning.
+ For å slippe overhead med en lagret tabell,
  skriver man heller en 
 \begin_inset Quotes cld
 \end_inset
@@ -847,16 +847,16 @@ blokk
 \end_inset
 
  uten kompresjon.
- Neste blokk komprimeres med et huffmanntre basert pÃ¥ forrige blokk.
+ Neste blokk komprimeres med et huffmanntre basert på forrige blokk.
  Poenget med dette,
- er at utpakkingsprogrammet kan gjÃ¸re det samme.
- Et problem med slike lÃ¸sninger,
+ er at utpakkingsprogrammet kan gjøre det samme.
+ Et problem med slike løsninger,
  er at en blokk kan inneholde tegn som ikke var i den forrige blokka,
- og det mÃ¥ hÃ¥ndteres.
- En mÃ¥te er Ã¥ gi tegn som ikke er med,
+ og det må håndteres.
+ En måte er å gi tegn som ikke er med,
  en lav frekvens i stedet for 0.
- En annen mÃ¥te er Ã¥ ha en escape-kode for slike tilfeller.
- NÃ¥r programmet dekoder en escapekode,
+ En annen måte er å ha en escape-kode for slike tilfeller.
+ Når programmet dekoder en escapekode,
  leser det deretter inn et tegn som ikke er komprimert med huffmannkoding.
  
 \end_layout
@@ -866,12 +866,12 @@ Tips om Huffmankoding
 \end_layout
 
 \begin_layout Subsubsection
-Huffmanndata som trengs for Ã¥ pakke ut igjen
+Huffmanndata som trengs for å pakke ut igjen
 \end_layout
 
 \begin_layout Standard
-Det er ikke nÃ¸dvendig Ã¥ lagre huffmanntreet,
- det holder Ã¥ lagre frekvenstabellen.
+Det er ikke nødvendig å lagre huffmanntreet,
+ det holder å lagre frekvenstabellen.
  Utpakkingsprogrammet kan dermed bygge opp samme tre ut fra frekvensene.
  
 \end_layout
@@ -886,13 +886,13 @@ En slik frekvenstabell blir alltid 1
 \end_inset
 
 kB.
- Filen som skal komprimeres mÃ¥ dermed vÃ¦re stor nok til at komprimeringen sparer mer enn 1
+ Filen som skal komprimeres må dermed være stor nok til at komprimeringen sparer mer enn 1
 \begin_inset space \thinspace{}
 \end_inset
 
 kB.
  Testfilene jeg lenker til,
- skulle vÃ¦re store nok.
+ skulle være store nok.
 \end_layout
 
 \begin_layout Subsubsection
@@ -916,18 +916,18 @@ med 8
 
 tegn.
  Skriver vi dette til en fil,
- gÃ¥r det med 8
+ går det med 8
 \begin_inset space \thinspace{}
 \end_inset
 
 byte,
- og vi oppnÃ¥r ikke noe datakompresjon.
- Tvert imot fÃ¥r vi en veldig stor fil!
+ og vi oppnår ikke noe datakompresjon.
+ Tvert imot får vi en veldig stor fil!
 \end_layout
 
 \begin_layout Standard
 Men bitstrengen 0b00001101 er det samme som tallet 13,
- og kan lagres som Ã©n byte.
+ og kan lagres som én byte.
 \end_layout
 
 \begin_layout Standard
@@ -939,9 +939,9 @@ long
 \begin_inset Quotes crd
 \end_inset
 
- er pÃ¥ 64 bit.
+ er på 64 bit.
  Ingen tegn vil trenge lenger Huffmankode enn det.
- (Det kan vises at nÃ¥ man komprimerer en fil pÃ¥ 2.7GB,
+ (Det kan vises at nå man komprimerer en fil på 2.7GB,
  trenger ingen tegn kodes med mer enn 44 bit.) 
 \begin_inset Quotes cld
 \end_inset
@@ -950,7 +950,7 @@ long
 \begin_inset Quotes crd
 \end_inset
 
- er dermed egnet til Ã¥ lagre bitstrenger.
+ er dermed egnet til å lagre bitstrenger.
  En 
 \begin_inset Quotes cld
 \end_inset
@@ -960,24 +960,24 @@ long
 \end_inset
 
  har alltid 64 bit,
- sÃ¥ en bitstreng-klasse mÃ¥ ogsÃ¥ ha et felt som forteller hvor mange av bitene som er med i bitstrengen.
+ så en bitstreng-klasse må også ha et felt som forteller hvor mange av bitene som er med i bitstrengen.
 \end_layout
 
 \begin_layout Standard
-Ã skrive bitstrenger til fil,
+Å skrive bitstrenger til fil,
  blir en del ekstra arbeid.
  Java lar oss bare skrive hele byte,
- og for Ã¥ vÃ¦re effektive bÃ¸r vi bare skrive byte-array av en viss stÃ¸rrelse.
+ og for å være effektive bør vi bare skrive byte-array av en viss størrelse.
  Men,
- med hÃ¸yre/venstreskift samt binÃ¦re & og | -operasjoner,
- kan vi fÃ¥ vÃ¥re bitstrenger inn i et byte-array som sÃ¥ kan skrives til disk.
+ med høyre/venstreskift samt binære & og | -operasjoner,
+ kan vi få våre bitstrenger inn i et byte-array som så kan skrives til disk.
  
 \end_layout
 
 \begin_layout Standard
 Tilsvarende for lesing:
  Vi leser inn et byte-array,
- og plukker deretter ut Ã©n og Ã©n bit for Ã¥ navigere gjennom huffmanntreet.
+ og plukker deretter ut én og én bit for å navigere gjennom huffmanntreet.
 \end_layout
 
 \begin_layout Subsection
@@ -991,19 +991,19 @@ Ikke gi opp,
 \end_layout
 
 \begin_layout Itemize
-Har noen fÃ¥ feil ved utpakking.
- Her mÃ¥ jeg kunne se at fila som pakkes ut har mye av det samme innholdet,
- sÃ¥ det gÃ¥r ikke med bare rot.
+Har noen få feil ved utpakking.
+ Her må jeg kunne se at fila som pakkes ut har mye av det samme innholdet,
+ så det går ikke med bare rot.
  Men noen feil her og der,
  holder til delvis uttelling.
 \end_layout
 
 \begin_layout Itemize
-Klarer Ã¥ pakke inn/ut deres egne testfiler,
+Klarer å pakke inn/ut deres egne testfiler,
  men ikke mine.
- Send i sÃ¥ fall med en testfil som fungerer.
+ Send i så fall med en testfil som fungerer.
  Det hender f.eks.
- at noen lager programmer som bare hÃ¥ndterer ascii,
+ at noen lager programmer som bare håndterer ascii,
  eller bare veldig korte filer.
 \end_layout
 
@@ -1344,10 +1344,10 @@ long
 \end_layout
 
 \begin_layout Standard
-Programmer som leser Ã©n og Ã©n byte fra fil,
+Programmer som leser én og én byte fra fil,
  blir alltid trege i Java.
- For Ã¥ fÃ¥ noe fart i sakene,
- lÃ¸nner det seg Ã¥ lese/skrive stÃ¸rre blokker,
+ For å få noe fart i sakene,
+ lønner det seg å lese/skrive større blokker,
  f.eks.
  et array med bytes.
  Men det er ikke et krav,
@@ -1358,7 +1358,7 @@ Programmer som leser Ã©n og Ã©n byte fra fil,
 
 \begin_layout Standard
 Noe bitfikling blir det uansett med Huffmannoppgaven.
- Det gÃ¥r ikke an Ã¥ skrive 
+ Det går ikke an å skrive 
 \begin_inset Quotes cld
 \end_inset
 
@@ -1367,8 +1367,8 @@ en halv byte
 \end_inset
 
  til fil,
- man mÃ¥ i det minste samle opp bits til man har en hel byte.
- Det kan vÃ¦re lurt Ã¥ lage en egen klasse for Ã¥ sende bitstrenger til fil.
+ man må i det minste samle opp bits til man har en hel byte.
+ Det kan være lurt å lage en egen klasse for å sende bitstrenger til fil.
 \end_layout
 
 \begin_layout Subsection
@@ -1377,7 +1377,7 @@ Noen kodeeksempler,
 \end_layout
 
 \begin_layout Kode-liten
-//Ãpne filer:
+//Åpne filer:
 \end_layout
 
 \begin_layout Kode-liten
@@ -1422,7 +1422,7 @@ innfil.readFully(data,
 \begin_inset Newline newline
 \end_inset
 
-//Lese inn Ã©n byte
+//Lese inn én byte
 \end_layout
 
 \begin_layout Kode-liten
@@ -1434,7 +1434,7 @@ x = innfil.readByte();
 \end_layout
 
 \begin_layout Kode-liten
-//Har ogsÃ¥:
+//Har også:
 \end_layout
 
 \begin_layout Kode-liten
@@ -1472,7 +1472,7 @@ utfil.write(data,
 \begin_inset Newline newline
 \end_inset
 
-//Skrive Ã©n byte til fil:
+//Skrive én byte til fil:
 \end_layout
 
 \begin_layout Kode-liten
@@ -1484,7 +1484,7 @@ utfil.writeByte(singlebyte);
 \end_layout
 
 \begin_layout Kode-liten
-//Har ogsÃ¥:
+//Har også:
  
 \end_layout
 
@@ -1517,7 +1517,7 @@ utfil.writeByte(singlebyte);
 \end_layout
 
 \begin_layout Kode-liten
-//og fÃ¥ det inn i et byte-array:
+//og få det inn i et byte-array:
 \begin_inset Newline newline
 \end_inset
 
@@ -1548,11 +1548,11 @@ long long3 = 0b010;
 \begin_inset Newline newline
 \end_inset
 
-//8 fÃ¸rste bit fra long1 til data[0]
+//8 første bit fra long1 til data[0]
 \end_layout
 
 \begin_layout Kode-liten
-//Ã¸vrige bits maskeres bort med &
+//øvrige bits maskeres bort med &
 \end_layout
 
 \begin_layout Kode-liten
@@ -1564,11 +1564,11 @@ data[0] = (byte)(long1 & 0b11111111);
 \begin_inset Newline newline
 \end_inset
 
-//5 gjenvÃ¦rende bit fra long1 til data[1]
+//5 gjenværende bit fra long1 til data[1]
 \end_layout
 
 \begin_layout Kode-liten
-//hÃ¸yreskiftet fjerner bits vi allerede har lagt i data[0]
+//høyreskiftet fjerner bits vi allerede har lagt i data[0]
 \end_layout
 
 \begin_layout Kode-liten
@@ -1588,11 +1588,11 @@ data[1] = (byte)(long1 >> 8);
 \end_layout
 
 \begin_layout Kode-liten
-//venstreskifter 5 plasser fordi de 5 fÃ¸rste bits i data[1] er i bruk fra fÃ¸r
+//venstreskifter 5 plasser fordi de 5 første bits i data[1] er i bruk fra før
 \end_layout
 
 \begin_layout Kode-liten
-//trenger ikke maskere vekk bits fordi bits over 256 ikke gÃ¥r inn i en byte uansett
+//trenger ikke maskere vekk bits fordi bits over 256 ikke går inn i en byte uansett
 \end_layout
 
 \begin_layout Kode-liten
@@ -1604,11 +1604,11 @@ data[1] |= (byte)(long2 << 5);
 \begin_inset Newline newline
 \end_inset
 
-//5 gjenvÃ¦rende bit fra long2 til data[2]
+//5 gjenværende bit fra long2 til data[2]
 \end_layout
 
 \begin_layout Kode-liten
-//hÃ¸yreskift fjerner de bits vi allerede la i data[1]
+//høyreskift fjerner de bits vi allerede la i data[1]
 \end_layout
 
 \begin_layout Kode-liten
