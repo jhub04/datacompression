@@ -9,7 +9,6 @@ public class LempelZivWelch {
 
   public List<Integer> compress(String fileName) {
     Map<String, Integer> dictionary = getDictionaryStart();
-    dictionarySize = 264;
     List<Integer> result = new ArrayList<>();
 
     try (FileInputStream input = new FileInputStream(fileName)) {
@@ -43,15 +42,15 @@ public class LempelZivWelch {
       dictionary.put(String.valueOf((char) i), i); //initialize some values to dictionary
     }
     //Spesialtilfeller
-    dictionary.put("æ", 256);
-    dictionary.put("ø", 257);
-    dictionary.put("å", 258);
-    dictionary.put("é", 259);
-    dictionary.put("•", 260);
-    dictionary.put("ô", 261);
-    dictionary.put("Ω", 262);
-    dictionary.put("…", 263);
-    dictionary.put("–", 264);
+    dictionary.put("æ", dictionarySize++);
+    dictionary.put("ø", dictionarySize++);
+    dictionary.put("å", dictionarySize++);
+    dictionary.put("é", dictionarySize++);
+    dictionary.put("•", dictionarySize++);
+    dictionary.put("ô", dictionarySize++);
+    dictionary.put("Ω", dictionarySize++);
+    dictionary.put("…", dictionarySize++);
+    dictionary.put("–", dictionarySize++);
     return dictionary;
   }
 }
