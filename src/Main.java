@@ -1,23 +1,21 @@
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 public class Main {
   public static void main(String[] args) {
     LempelZivWelch compressor = new LempelZivWelch();
-    List<Integer> compressed = compressor.compress("test.txt");
+    List<Integer> compressed = compressor.compress("div.lyx");
 
-    String huffmanCompressed = Huffman.huffmanCompress(compressed);
+    compressor.decompress(compressed);
 
-
+    /**
     try (FileOutputStream fos = new FileOutputStream("test_encoded.bin")) {
       writeBitsToFile(huffmanCompressed, fos);
       System.out.println("Huffman encoded data written to file: huffman_encoded.bin");
     } catch (IOException e) {
       e.printStackTrace();
-    }
+    }*/
   }
 
 

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class LempelZivWelch {
-  int dictionarySize = 256;
+  int dictionarySize;
 
   public List<Integer> compress(String fileName) {
     Map<String, Integer> dictionary = getDictionaryStart();
@@ -41,7 +41,7 @@ public class LempelZivWelch {
     Map<Integer, String> reversedDictionary = reverseKeysAndValues(dictionary);
 
     String characters = String.valueOf((char) lzwCompressed.remove(0).intValue());
-    StringBuilder decompressedData = new StringBuilder();
+    StringBuilder decompressedData = new StringBuilder(characters);
 
     for(int i : lzwCompressed) {
       String decompressedString = "";
@@ -71,6 +71,7 @@ public class LempelZivWelch {
   }
 
   public Map<String, Integer> getDictionaryStart() {
+    dictionarySize = 256;
     Map<String, Integer> dictionary = new HashMap<>();
     for (int i = 0; i < dictionarySize; i++) {
       dictionary.put(String.valueOf((char) i), i); //initialize some values to dictionary
