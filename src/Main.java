@@ -14,7 +14,7 @@ public class Main {
 
     try (FileOutputStream fos = new FileOutputStream("test_encoded.bin")) {
       writeBitsToFile(huffmanCompressed, fos);
-      System.out.println("Huffman encoded data written to file: huffman_encoded.txt");
+      System.out.println("Huffman encoded data written to file: huffman_encoded.bin");
     } catch (IOException e) {
       e.printStackTrace();
     }

@@ -41,10 +41,16 @@ public class LempelZivWelch {
     for (int i = 0; i < dictionarySize; i++) {
       dictionary.put(String.valueOf((char) i), i); //initialize some values to dictionary
     }
+    //Spesialtilfeller
     dictionary.put("æ", 256);
     dictionary.put("ø", 257);
     dictionary.put("å", 258);
-    dictionary.put("•", 259);
+    dictionary.put("é", 259);
+    dictionary.put("•", 260);
+    dictionary.put("ô", 261);
+    dictionary.put("Ω", 262);
+    dictionary.put("…", 263);
+    dictionary.put("–", 264);
     return dictionary;
   }
 }
