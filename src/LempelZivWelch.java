@@ -5,13 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 public class LempelZivWelch {
+  int dictionarySize = 256;
 
   public List<Integer> compress(String fileName) {
-    int dictionarySize = 256;
-    Map<String, Integer> dictionary = new HashMap<>();
-    for (int i = 0; i < dictionarySize; i++) {
-      dictionary.put(String.valueOf((char) i), i); //initialize some values to dictionary
-    }
+    Map<String, Integer> dictionary = getDictionaryStart();
     List<Integer> result = new ArrayList<>();
 
     try (FileInputStream input = new FileInputStream(fileName)) {
@@ -37,5 +34,17 @@ public class LempelZivWelch {
       e.printStackTrace();
     }
     return result;
+  }
+
+  public Map<String, Integer> getDictionaryStart() {
+    Map<String, Integer> dictionary = new HashMap<>();
+    for (int i = 0; i < dictionarySize; i++) {
+      dictionary.put(String.valueOf((char) i), i); //initialize some values to dictionary
+    }
+    dictionary.put("æ", 256);
+    dictionary.put("ø", 257);
+    dictionary.put("å", 258);
+    dictionary.put("•", 259);
+    return dictionary;
   }
 }
