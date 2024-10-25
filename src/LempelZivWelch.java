@@ -9,6 +9,7 @@ public class LempelZivWelch {
 
   public List<Integer> compress(String fileName) {
     Map<String, Integer> dictionary = getDictionaryStart();
+    dictionarySize = 264;
     List<Integer> result = new ArrayList<>();
 
     try (FileInputStream input = new FileInputStream(fileName)) {
