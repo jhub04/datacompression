@@ -36,6 +36,40 @@ public class LempelZivWelch {
     return result;
   }
 
+  public void decompress(List<Integer> lzwCompressed) {
+    Map<String, Integer> dictionary = getDictionaryStart();
+    Map<Integer, String> reversedDictionary = reverseKeysAndValues(dictionary);
+
+    String characters = String.valueOf((char) lzwCompressed.remove(0).intValue());
+    StringBuilder decompressedData = new StringBuilder();
+
+    for(int i : lzwCompressed) {
+      String decompressedString = "";
+      if (reversedDictionary.containsKey(i)) {
+        decompressedString = reversedDictionary.get(i);
+      } else {
+        decompressedString = characters + characters.charAt(0);
+      }
+      decompressedData.append(decompressedString);
+      reversedDictionary.put(dictionarySize++, characters + decompressedString.charAt(0));
+      characters = decompressedString;
+    }
+
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("file_decompressed.txt"))) {
+      writer.write(decompressedData.toString());
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public Map<Integer, String> reverseKeysAndValues(Map<String, Integer> map) {
+    Map<Integer, String> reversed = new HashMap<>();
+    for (Map.Entry<String, Integer> entry : map.entrySet()) {
+      reversed.put(entry.getValue(), entry.getKey());
+    }
+    return reversed;
+  }
+
   public Map<String, Integer> getDictionaryStart() {
     Map<String, Integer> dictionary = new HashMap<>();
     for (int i = 0; i < dictionarySize; i++) {
