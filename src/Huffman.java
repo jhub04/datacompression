@@ -1,5 +1,6 @@
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,6 +21,7 @@ class HuffmanNode {
 }
 
 class Huffman {
+  private static final Boolean DEBUG = true;
 
   public static Map<Integer, Integer> calculateFrequency(List<Integer> lwzOutput) {
     Map<Integer, Integer> frequencyMap = new HashMap<>();
@@ -89,46 +91,70 @@ class Huffman {
   }
 
   public static void writeCompressedData(List<Integer> lzwOutput, String outputPath) throws IOException {
-    // Find max LZW code to determine array size
+    // Find max LZW code
     int maxCode = lzwOutput.stream().mapToInt(Integer::intValue).max().orElse(0);
+    if (DEBUG) System.out.println("Max LZW code: " + maxCode);
 
-    // Create and fill frequency array
+    // Create frequency array
     int[] frequencies = new int[maxCode + 1];
     for (int code : lzwOutput) {
+      if (code < 0 || code > maxCode) {
+        throw new IllegalArgumentException("Invalid LZW code: " + code);
+      }
       frequencies[code]++;
     }
 
-    // Build Huffman tree using non-zero frequencies
+    if (DEBUG) {
+      System.out.println("Non-zero frequencies:");
+      for (int i = 0; i < frequencies.length; i++) {
+        if (frequencies[i] > 0) {
+          System.out.printf("Code %d: %d times%n", i, frequencies[i]);
+        }
+      }
+    }
+
+    // Build Huffman tree and generate codes
     HuffmanNode root = buildHuffmanTreeFromArray(frequencies);
     Map<Integer, String> huffmanCodes = new HashMap<>();
     generateHuffmanCodes(root, "", huffmanCodes);
+
+    if (DEBUG) {
+      System.out.println("Huffman codes:");
+      huffmanCodes.forEach((code, bits) ->
+          System.out.printf("Code %d: %s%n", code, bits));
+    }
+
     String encoded = encode(lzwOutput, huffmanCodes);
 
     try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(outputPath))) {
-      // Write max code value (for array size during decompression)
+      // Write max code value
       dos.writeInt(maxCode);
 
-      // Write number of non-zero frequencies
+      // Count and write number of non-zero frequencies
       int nonZeroCount = 0;
       for (int freq : frequencies) {
         if (freq > 0) nonZeroCount++;
       }
       dos.writeInt(nonZeroCount);
 
-      // Write only non-zero frequencies with their indices
+      if (DEBUG) System.out.println("Number of non-zero frequencies: " + nonZeroCount);
+
+      // Write non-zero frequencies with their indices
       for (int i = 0; i < frequencies.length; i++) {
         if (frequencies[i] > 0) {
-          dos.writeShort(i);         // Index (LZW code)
-          dos.writeInt(frequencies[i]); // Frequency
+          dos.writeShort(i);
+          dos.writeInt(frequencies[i]);
         }
       }
 
-      // Write encoded data length
+      // Write encoded data length and data
       dos.writeInt(encoded.length());
+      if (DEBUG) System.out.println("Encoded data length: " + encoded.length());
 
-      // Write encoded data
+      // Write bits
       int currentByte = 0;
       int bitCount = 0;
+
       for (char bit : encoded.toCharArray()) {
         currentByte = (currentByte << 1) | (bit - '0');
         bitCount++;
@@ -140,6 +166,7 @@ class Huffman {
         }
       }
 
+      // Write remaining bits
       if (bitCount > 0) {
         currentByte = currentByte << (8 - bitCount);
         dos.write(currentByte);
@@ -151,35 +178,52 @@ class Huffman {
     try (DataInputStream dis = new DataInputStream(new FileInputStream(inputPath))) {
       // Read max code value
       int maxCode = dis.readInt();
+      if (DEBUG) System.out.println("Reading - Max code: " + maxCode);
+
       int[] frequencies = new int[maxCode + 1];
 
       // Read number of non-zero frequencies
       int nonZeroCount = dis.readInt();
+      if (DEBUG) System.out.println("Reading - Non-zero frequencies count: " + nonZeroCount);
 
-      // Read non-zero frequencies
+      // Read frequencies
       for (int i = 0; i < nonZeroCount; i++) {
-        int index = dis.readShort();
+        int code = dis.readShort();
         int freq = dis.readInt();
-        frequencies[index] = freq;
+        frequencies[code] = freq;
+        if (DEBUG) System.out.printf("Reading - Code %d: %d times%n", code, freq);
       }
 
       // Rebuild Huffman tree
       HuffmanNode root = buildHuffmanTreeFromArray(frequencies);
+      if (DEBUG) {
+        System.out.println("Reconstructed Huffman codes:");
+        Map<Integer, String> reconstructedCodes = new HashMap<>();
+        generateHuffmanCodes(root, "", reconstructedCodes);
+        reconstructedCodes.forEach((code, bits) ->
+            System.out.printf("Code %d: %s%n", code, bits));
+      }
 
       // Read encoded data length
       int totalBits = dis.readInt();
+      if (DEBUG) System.out.println("Reading - Total bits: " + totalBits);
 
       // Decode data
       List<Integer> decodedOutput = new ArrayList<>();
       HuffmanNode current = root;
       int bitsRead = 0;
+      StringBuilder bitSequence = new StringBuilder();  // For debugging
 
       while (bitsRead < totalBits) {
         int currentByte = dis.read();
-        if (currentByte == -1) break;
+        if (currentByte == -1) {
+          throw new EOFException("Unexpected end of file");
+        }
 
         for (int i = 7; i >= 0 && bitsRead < totalBits; i--) {
           int bit = (currentByte >> i) & 1;
+          if (DEBUG) bitSequence.append(bit);
+
           current = (bit == 0) ? current.left : current.right;
 
           if (current.left == null && current.right == null) {
@@ -190,16 +234,26 @@ class Huffman {
         }
       }
 
+      if (DEBUG) {
+        System.out.println("Read bit sequence: " + bitSequence);
+        System.out.println("Decoded " + decodedOutput.size() + " symbols");
+      }
+
       return decodedOutput;
     }
   }
 
   private static HuffmanNode buildHuffmanTreeFromArray(int[] frequencies) {
     Queue<HuffmanNode> priorityQueue = new PriorityQueue<>(
-        Comparator.comparing(node -> node.data)
+        (a, b) -> {
+          if (a.data != b.data) {
+            return Integer.compare(a.data, b.data);
+          }
+          return Integer.compare(a.c, b.c);  // Ensure consistent ordering
+        }
     );
 
-    // Create leaf nodes only for non-zero frequencies
+    // Create leaf nodes for non-zero frequencies
     for (int i = 0; i < frequencies.length; i++) {
       if (frequencies[i] > 0) {
         HuffmanNode node = new HuffmanNode();
@@ -216,8 +270,14 @@ class Huffman {
       HuffmanNode newNode = new HuffmanNode();
       newNode.data = x.data + y.data;
       newNode.c = '-';
-      newNode.left = x;
-      newNode.right = y;
+      // Ensure consistent ordering of children
+      if (x.data < y.data || (x.data == y.data && x.c < y.c)) {
+        newNode.left = x;
+        newNode.right = y;
+      } else {
+        newNode.left = y;
+        newNode.right = x;
+      }
 
       priorityQueue.add(newNode);
     }
