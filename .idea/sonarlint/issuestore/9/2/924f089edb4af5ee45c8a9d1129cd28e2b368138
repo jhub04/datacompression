@@ -1,15 +1,14 @@
 
-	java:S112á"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8üµæÆ­2J$723b678e-c5cb-4eec-a5b7-465488d18ae0
-§
-java:S1488u"_Immediately return this expression instead of assigning it to the temporary variable "encoded".(ÒùçÖøÿÿÿÿ8şµæÆ­2J$ad320e69-1c67-466e-b3b5-b408b531ed62
+	java:S112Ò"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8üµæÆ­2J$c7bfd1e6-c7c3-4056-9721-a4feaa86740f
 l
-java:S5411ä"(Use a primitive boolean expression here.(Ü”ºæ8ÿµæÆ­2J$f05254c8-e785-48dd-b18d-ce9b2d6eb9ad
-~	java:S125"<This block of commented-out lines of code should be removed.(ğÕÍŸ8±»êÆ­2J$7bdd22ab-d88b-4ad6-be13-49229081efa5
+java:S5411Õ"(Use a primitive boolean expression here.(Ü”ºæ8£½«Ç­2J$3037653a-8668-489d-9326-3362294ffb1d
+X	java:S125"<This block of commented-out lines of code should be removed.(ğÕÍŸ8Àğ´Ç­2
+W	java:S125"<This block of commented-out lines of code should be removed.(•€‹8Àğ´Ç­2
 }
-java:S11184":Add a private constructor to hide the implicit public one.(İè«8É·æÆ­2J$12da89d9-cc86-4453-8a16-0a0d1c7cb088
+java:S11184":Add a private constructor to hide the implicit public one.(İè«8É·æÆ­2J$1b8353b2-147d-470e-9e21-f76183e5ea31
 –
-java:S3776»"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¿ÏÇ8Ò·æÆ­2J$61beebdf-778e-4ecc-b508-c9402d75a3a0
+java:S3776°"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¿ÏÇ8Ò·æÆ­2J$f7508aaf-3cb2-4b77-9827-a3c9c6205763
 †
-java:S1994â"=Move the update of "bitsRead" into this loop's update clause.(×£¢æùÿÿÿÿ8Ö·æÆ­2J$7b655125-60b8-416d-8830-310c531d3ff3
-v
-java:S1144!"3Remove this unused private "decompressFile" method.(¹ñß·8Ã»êÆ­2J$565a310d-7b5f-4508-9925-409841311e97
+java:S1994Ó"=Move the update of "bitsRead" into this loop's update clause.(×£¢æùÿÿÿÿ8Ö·æÆ­2J$1c1d935c-4779-40ce-98ff-c4325ab5b1f4
+P
+java:S1144!"3Remove this unused private "decompressFile" method.(¹ñß·8Ñğ´Ç­2

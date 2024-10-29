@@ -12,9 +12,9 @@ public class Main {
   public static void main(String[] args) {
     try {
       compressFile("opg6-kompr.lyx", "o.bin");
-      //decompressFile("o.bin", "dec.lyx");
-      //compressFile("diverse.lyx", "d_comp.bin");
-      //decompressFile("d_comp.bin", "diverse_decompr.lyx");
+      // decompressFile("o.bin", "dec.lyx");
+      compressFile("diverse.lyx", "d_comp.bin");
+      // decompressFile("d_comp.bin", "diverse_decompr.lyx");
     } catch (IOException e) {
       System.err.println("Error processing file: " + e.getMessage());
       e.printStackTrace();
@@ -50,7 +50,7 @@ class HuffmanNode {
 }
 
 class Huffman {
-  private static final Boolean DEBUG = true;
+  private static final Boolean DEBUG = false;
 
   public static Map<Integer, Integer> calculateFrequency(List<Integer> lwzOutput) {
     Map<Integer, Integer> frequencyMap = new HashMap<>();
@@ -106,17 +106,6 @@ class Huffman {
       encodedOutput.append(huffmanCodes.get(code));
     }
     return encodedOutput.toString();
-  }
-
-  public static String huffmanCompress(List<Integer> lzwOutput) {
-    Map<Integer, Integer> frequencyMap = calculateFrequency(lzwOutput);
-    HuffmanNode root = buildHuffmanTree(frequencyMap);
-
-    Map<Integer, String> huffmanCodes = new HashMap<>();
-    generateHuffmanCodes(root, "", huffmanCodes);
-    String encoded = encode(lzwOutput, huffmanCodes);
-
-    return encoded;
   }
 
   public static void writeCompressedData(List<Integer> lzwOutput, String outputPath) throws IOException {
@@ -196,10 +185,6 @@ class Huffman {
 
       // Read frequencies
       for (int i = 0; i < nonZeroCount; i++) {
-        /**
-         int highByte = dis.read();
-         int lowByte = dis.read();
-         int code = (highByte << 8) | (lowByte & 0xFF);*/
         int code = dis.readChar();
         int freq = dis.readChar();
         frequencies[code] = freq;
@@ -215,7 +200,7 @@ class Huffman {
       List<Integer> decodedOutput = new ArrayList<>();
       HuffmanNode current = root;
       int bitsRead = 0;
-      StringBuilder bitSequence = new StringBuilder();  // For debugging
+      StringBuilder bitSequence = new StringBuilder();
 
       while (bitsRead < totalBits) {
         int currentByte = dis.read();
